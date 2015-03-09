@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
 
   #before_action :authenticate_user!
 
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up).push(:first_name, :last_name, :address,
+                                   :city, :state, :zip_code)
+  end
+
 end
