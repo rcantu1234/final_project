@@ -8,7 +8,34 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="container"></div>
+    <div class='row'>
+      <div class='col-md-12'>
+
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+        <%= yield %>
+
+      </div>
+    </div>
+  </div>
+
+  <h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+for (var i = 0; i < text.length; i++){
+  obj = JSON.parse(text);
+ // document.getElementById("demo").innerHTML =
+  document.write(obj.employees[i].firstName + " " + obj.employees[i].lastName + "<br>");
+}
+</script>
 
 </body>
 </html>
