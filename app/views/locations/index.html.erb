@@ -10,8 +10,7 @@
 <table>
   <thead>
     <tr>
-      <th>Zip code</th>
-      <th>Address</th>
+      <th>Zip Code</th>
       <th>Latitude</th>
       <th>Longitude</th>
       <th>User</th>
@@ -23,7 +22,6 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.zip_code %></td>
-        <td><%= location.address %></td>
         <td><%= location.latitude %></td>
         <td><%= location.longitude %></td>
         <td><%= location.user.first_name %></td>
