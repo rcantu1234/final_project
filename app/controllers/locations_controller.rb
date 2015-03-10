@@ -15,9 +15,6 @@ class LocationsController < ApplicationController
   # GET /locations/1.json
   def show
     @location = Location.find(params[:id])
-    geo_response = ::Geocoder.coordinates(params[:zip_code])
-    @latitude = geo_response.first
-    @longitude = geo_response.last
   end
 
   # GET /locations/new
@@ -34,10 +31,8 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new(location_params)
-    # geo_response = ::Geocoder.coordinates(params[:zip_code])
-   # geo_response = ::Geocoder.coordinates(params[:zip_code])
-   @latitude = geo_response.first
-   @longitude = geo_response.last
+
+    geo_response = ::Geocoder.coordinates(params[:zip_code])
 
     respond_to do |format|
       if @location.save

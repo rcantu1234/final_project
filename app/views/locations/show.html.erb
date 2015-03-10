@@ -26,7 +26,7 @@
 @location.latitude = geo_response.first
 @location.longitude = geo_response.last -->
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{Geocoder.coordinates(@location.latitude)}%2C#{Geocoder.coordinates(@location.longitude)}" %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
 <br>
 <br>
