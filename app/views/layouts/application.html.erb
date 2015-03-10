@@ -8,10 +8,14 @@
 </head>
 <body>
 
-<nav>
-  <%= link_to 'USERS', users_path %>
-  <%= link_to 'SEARCH GAS LOCATIONS', locations_path %>
-</nav>
+<div class='nav-format'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <%= link_to 'USERS', users_path %>
+      <%= link_to 'SEARCH GAS LOCATIONS', locations_path %>
+    </div>
+  </div>
+</div>
 
   <div class="container"></div>
     <div class='row'>
@@ -19,6 +23,7 @@
 
      <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+
         <%= yield %>
 
       </div>

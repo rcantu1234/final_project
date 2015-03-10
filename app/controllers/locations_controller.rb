@@ -8,11 +8,16 @@ class LocationsController < ApplicationController
       @locations = Location.near(params[:search], 50, :order => :distance)
     else
       @locations = Location.all
+    end
   end
 
   # GET /locations/1
   # GET /locations/1.json
   def show
+    @location = Location.find(params[:id])
+    geo_response = ::Geocoder.coordinates(params[:zip_code])
+    @latitude = geo_response.first
+    @longitude = geo_response.last
   end
 
   # GET /locations/new
@@ -22,12 +27,17 @@ class LocationsController < ApplicationController
 
   # GET /locations/1/edit
   def edit
+    @location = Location.find(params[:id])
   end
 
   # POST /locations
   # POST /locations.json
   def create
     @location = Location.new(location_params)
+    # geo_response = ::Geocoder.coordinates(params[:zip_code])
+   # geo_response = ::Geocoder.coordinates(params[:zip_code])
+   @latitude = geo_response.first
+   @longitude = geo_response.last
 
     respond_to do |format|
       if @location.save
@@ -72,7 +82,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:zip_code, :address, :latitude, :longitude, :user_id)
+      params.require(:location).permit(:zip_code, :address, :state, :city, :latitude, :longitude, :user_id)
     end
-  end
 end
