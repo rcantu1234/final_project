@@ -15,6 +15,11 @@ class LocationsController < ApplicationController
   # GET /locations/1.json
   def show
     @location = Location.find(params[:id])
+    geo_response = ::Geocoder.coordinates(params[:zip_code])
+
+    #@location = Location.find(params[:zip_code])
+    #@location = Location.find(params[:distance])
+    #@location = Location.find(params[:fuel_type])
   end
 
   # GET /locations/new
@@ -77,6 +82,7 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:zip_code, :address, :state, :city, :latitude, :longitude, :user_id)
+      params.require(:location).permit(:zip_code, :address,
+        :state, :city, :latitude, :longitude, :user_id, :distance, :fuel_type)
     end
 end

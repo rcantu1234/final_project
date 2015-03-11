@@ -18,7 +18,11 @@
   <%= @location.user_id %>
 </p>
 
+
+
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+
+<%= response.get_gas_stations(latitude, longitude, distance, ) %>
 
 <br>
 <br>
