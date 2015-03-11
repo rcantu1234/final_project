@@ -18,14 +18,20 @@
   <%= @location.user_id %>
 </p>
 
+<%= @response.each do |x|
+  image = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"
+  if x < image.length
+    image++
+  puts  } %>
 
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
-
-<%= response.get_gas_stations(latitude, longitude, distance, ) %>
 
 <br>
 <br>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
+
+<br>
+
+<%= @response.each { |x| puts x} %>

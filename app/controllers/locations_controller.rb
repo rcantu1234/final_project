@@ -15,11 +15,8 @@ class LocationsController < ApplicationController
   # GET /locations/1.json
   def show
     @location = Location.find(params[:id])
-    geo_response = ::Geocoder.coordinates(params[:zip_code])
-
-    #@location = Location.find(params[:zip_code])
-    #@location = Location.find(params[:distance])
-    #@location = Location.find(params[:fuel_type])
+    geo_response = Geocoder.coordinates(params[:zip_code])
+    @response = Location.get_gas_stations(@location.latitude, @location.longitude)
   end
 
   # GET /locations/new
