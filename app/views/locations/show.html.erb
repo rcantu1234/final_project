@@ -18,13 +18,7 @@
   <%= @location.user_id %>
 </p>
 
-<%= @response.each do |x|
-  image = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"
-  if x < image.length
-    image++
-  puts  } %>
-
-
+<%= image_tag @map_url %>
 
 <br>
 <br>
@@ -34,4 +28,4 @@
 
 <br>
 
-<%= @response.each { |x| puts x} %>
+<%= @response %>
