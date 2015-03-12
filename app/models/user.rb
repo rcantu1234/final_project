@@ -5,7 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :locations
- # devise :database_authenticatable, :registerable,
-   #      :recoverable, :rememberable, :trackable, :validatable
 
 end

@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<div class="container">
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class="center">
+        <img src="https://www.freelogoservices.com/checkoutimagev2/0/0/0/aHR0cDovL3d3dy5mcmVlbG9nb3NlcnZpY2VzLmNvbS9hcGkvbWFpbi9pbWFnZXMvMWorb2psMUtPTWtYOVd5b2ZCZTQzRDZraWZlRHJoNUdtaDNia21BeUszVWMrQTVva2lZc2ouLi5WcTlmbz0%3D" alt="Gas Station Finder Logo">
+      </div>
+    </div>
+  </div>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -19,6 +28,7 @@
         <li><%= link_to 'SEARCH GAS LOCATIONS', new_location_path %></li>
         <li><%= link_to 'CAR-MAINTENANCE TIPS' %>
         <li><%= link_to 'BLOG' %></li>
+        <li><a href="/users/sign_in/">SIGN-IN</a></li>
         <li><%= link_to 'SIGN-UP', new_user_registration_path(@user) %></li>
         <li><%= link_to 'SIGN-OUT', destroy_user_session_path(@user), method: :delete %></li>
       </ul>
