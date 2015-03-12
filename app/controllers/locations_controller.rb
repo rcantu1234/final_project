@@ -17,10 +17,15 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     geo_response = Geocoder.coordinates(params[:zip_code])
     loc_response = Location.get_gas_stations(@location.latitude, @location.longitude)
+    address_response = Location.get_gas_stations_address(@location.latitude, @location.longitude)
     @map_url  = "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers="
 
     @map_url += loc_response.fetch("stations", []).map do |station|
       "#{station['lat']}%2C#{station['lng']}"
+    end.join('%7c')
+
+    @addresses = address_response.fetch("stations", []).map do |station|
+      "#{station['address']}"
     end.join('%7c')
 
   end

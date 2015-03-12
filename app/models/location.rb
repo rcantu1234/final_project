@@ -13,7 +13,20 @@ class Location < ActiveRecord::Base
     gas_station_url = "http://devapi.mygasfeed.com/stations/radius/#{latitude}/#{longitude}/#{distance}/#{fuel_type}/distance/#{DEVELOPER_API}.json"
     response = open(gas_station_url).read
     JSON.parse(response)
-  rescue JSON::ParserError => error
+
+    rescue JSON::ParserError => error
+    puts "******"
+    puts "Error Occured #{error}"
+    puts "******"
+    JSON.parse(response.split('</pre></div></pre>').last)
+  end
+
+   def self.get_gas_stations_address(latitude, longitude)
+    gas_station_address_url = "http://devapi.mygasfeed.com/locations/geoaddress/#{latitude}/#{longitude}/#{DEVELOPER_API}.json"
+    response = open(gas_station_address_url).read
+    JSON.parse(response)
+
+    rescue JSON::ParserError => error
     puts "******"
     puts "Error Occured #{error}"
     puts "******"
