@@ -14,7 +14,8 @@
     <div class='col-md-12'>
       <%= link_to 'USERS', users_path %> |
       <%= link_to 'SEARCH GAS LOCATIONS', new_location_path %> |
-      <%= link_to 'SIGN-UP', new_user_registration_path(@user) %>
+      <%= link_to 'SIGN-UP', new_user_registration_path(@user) %> |
+
     </div>
   </div>
 </div> -->
@@ -22,16 +23,16 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <ul class='nav navbar-nav'>
-        <li class='gas-station-finder-height'><%= link_to 'Gas Station Finder', root_path %></li>
-      </ul>
+        <a class="navbar-brand" href="/users/sign_up">Gas Station Finder</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
         <li class="active"><%= link_to 'HOME', root_path %></li>
-        <li><%= link_to 'USERS', users_path %></li>
         <li><%= link_to 'SEARCH GAS LOCATIONS', new_location_path %></li>
+        <li><%= link_to 'CAR-MAINTENANCE TIPS' %>
+        <li><%= link_to 'BLOG' %></li>
         <li><%= link_to 'SIGN-UP', new_user_registration_path(@user) %></li>
+        <li><%= link_to 'SIGN-OUT', destroy_user_session_path(@user), method: :delete %></li>
       </ul>
     </div>
   </div>
