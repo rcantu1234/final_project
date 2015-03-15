@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Blogs</h1>
+
+<% @blogs.each do |blog| %>
+<h2><img src="https://gp3.googleusercontent.com/-vW2tmEkthc0/AAAAAAAAAAI/AAAAAAAAAAA/q8Lqhot15fc/s48-c-k-no/photo.jpg" width="48px" height="48px" alt="" class="Uk vKa" oid="UCVkfp3BqPjSvnPesUpz9-KA">
+  <%= blog.title %></h2>
+  <p><%= blog.content %></p>
+  <hr />
+<% end %>
+
+
+<!--
+<table class="table table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.content %></td>
+        <td><%= link_to 'Show', blog %></td>
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %> -->
