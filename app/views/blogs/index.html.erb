@@ -7,8 +7,9 @@
     <%= link_to blog.title, blog %></h2>
     <p><%= blog.content %></p>
     <small><%= blog.created_at %></small>
+    <p><%= link_to 'Edit', edit_blog_path(blog) %> |
+    <%= link_to 'Delete', blog_path(blog), method: :delete %></p>
     <hr />
-    <%= link_to 'Edit', edit_blog_path(@blog) %>
 <% end %>
 
 <p><%= link_to "Add a New Post", new_blog_path %></p>
