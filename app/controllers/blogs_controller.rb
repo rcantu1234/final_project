@@ -5,6 +5,9 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    @blogs = Blog.limit(5)
+               .offset(5 * params[:page].to_i)
+               .order(params.fetch(:sort, :title))
   end
 
   # GET /blogs/1
