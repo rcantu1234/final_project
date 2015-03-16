@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :maintenances
+
   resources :blogs
 
   get 'blogs/index'
