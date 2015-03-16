@@ -7,7 +7,7 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
     @blogs = Blog.limit(5)
                .offset(5 * params[:page].to_i)
-               .order(params.fetch(:sort, :title))
+               .order("created_at DESC")
   end
 
   # GET /blogs/1

@@ -1,31 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Car Maintenance Tips</h1>
+<h1 class='car-maintenance-title'>Car Maintenance Tips</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @maintenances.each do |maintenance| %>
-      <tr>
-        <td><%= maintenance.image %></td>
-        <td><%= maintenance.title %></td>
-        <td><%= maintenance.description %></td>
-      <!--   <td><%= link_to 'Show', maintenance %></td>
-        <td><%= link_to 'Edit', edit_maintenance_path(maintenance) %></td>
-        <td><%= link_to 'Destroy', maintenance, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
+        <p><%= image_tag(maintenance.image, class: 'tire-pressure') %>
+        <h3><%= maintenance.title %></h3></p>
+        <p><%= maintenance.description %></p>
     <% end %>
-  </tbody>
-</table>
+
+    <br>
 
 <br>
 
-<%= link_to 'New Maintenance', new_maintenance_path %>
+
