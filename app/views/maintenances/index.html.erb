@@ -15,9 +15,13 @@
   <tbody>
     <% @maintenances.each do |maintenance| %>
       <tr>
-        <td><%= image_tag(maintenance.image(:medium)) %></td>
+        <td><%= maintenance.image %></td>
         <td><%= maintenance.title %></td>
         <td><%= maintenance.description %></td>
+      <!--   <td><%= link_to 'Show', maintenance %></td>
+        <td><%= link_to 'Edit', edit_maintenance_path(maintenance) %></td>
+        <td><%= link_to 'Destroy', maintenance, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
     <% end %>
   </tbody>
 </table>

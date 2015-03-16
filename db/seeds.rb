@@ -19,3 +19,19 @@ tirepressure = Maintenance.create!({
                 description: "Check your tyre pressures regularly - once a week is ideal. Bad tyre pressures can affect fuel economy, handling and comfort.
                 It's easy to do and there is no excuse not to."
     })
+
+treaddepth = Maintenance.create!({
+                title: "CHECK YOUR TREAD DEPTH",
+                description: "Bald, slick tyres might be good for motor racing but they're no good on the road.
+                Most tyres come with tread wear bars built into them now - find one, examine it and if your tread is too low, replace your tyres.
+                Four new tyres might seem expensive but they're cheaper than a fine or an accident."
+    })
+
+belts = Maintenance.create!({
+                title: "CHECK YOUR BELTS",
+                description: "At the front of your engine there will be a series of rubber drive belts that loop around various pulleys,
+                driving everything from the alternator to the a/c compressor.
+                Rubber perishes, more so in extreme conditions like those found in an operating engine bay.
+                Get your timing belt and accessory drive belt checked every 25,000 miles,
+                preferably replacing it every 50,000 miles."
+    })
