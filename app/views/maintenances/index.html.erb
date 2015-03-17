@@ -2,9 +2,10 @@
 
 <h1 class='car-maintenance-title'>Car Maintenance Tips</h1>
 
+<div>
     <% @maintenances.each do |maintenance| %>
-        <p><%= image_tag(maintenance.image, class: 'tire-pressure') %>
-        <h3><%= maintenance.title %></h3></p>
+        <h3><%= image_tag(maintenance.image, class: 'image-format') %>
+        <%= maintenance.title %></h3>
         <p><%= maintenance.description %></p>
     <% end %>
 
