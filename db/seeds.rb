@@ -14,7 +14,7 @@
 
 
 tirepressure = Maintenance.create!({
-                image: "http://www.carbibles.com/images/checkyourpressures.jpg",
+                # image: "http://www.carbibles.com/images/checkyourpressures.jpg",
                 title: "CHECK YOUR TYRE PRESSURES",
                 description: "Check your tyre pressures regularly - once a week is ideal. Bad tyre pressures can affect fuel economy, handling and comfort.
                 It's easy to do and there is no excuse not to."
@@ -44,7 +44,7 @@ fueleconomy = Maintenance.create!({
     })
 
 oillevel = Maintenance.create!({
-                image: "http://www.carbibles.com/images/checkyouroil.jpg",
+                image: "checkyouroil.jpg",
                 title: "CHECKING YOUR OIL LEVEL",
                 description: "This is something everyone can do - it's quick and easy and it'll tell you if your engine needs oil.
                 If the oil is too high or too low, it can cause trouble for your engine.
@@ -70,7 +70,7 @@ coolantlevel = Maintenance.create!({
     })
 
 batteryterminals = Maintenance.create!({
-                image: "http://www.carbibles.com/images/negativefirst.jpg",
+                image: "batteryterminals.jpg",
                 title: "DISCONNECTING AND RECONNECTING YOUR BATTERY",
                 description: "If you're going to do any work on your car involving the electrical system, disconnect the battery first.
                 To do this, loosen the connector for the negative/ground terminal first, and wiggle the terminal cap off.
@@ -96,7 +96,7 @@ checkbatteryterminals = Maintenance.create!({
     })
 
 lights1 = Maintenance.create!({
-                image: "http://www.carbibles.com/images/holdbulbbybase.jpg",
+                image: "holdbulbbybase.jpg",
                 title: "ONE INDICATOR OR BLINKER IS FLASHING FASTER THAN THE OTHER",
                 description: "When you indicate one way and the blinker flashes quicker than when you indicate the other way,
                 it means one of the bulbs has blown.
@@ -114,7 +114,7 @@ lights2 = Maintenance.create!({
     })
 
 checkengine = Maintenance.create!({
-                image: "http://www.carbibles.com/images/checkenginelight.gif",
+                image: "checkenginelight.gif",
                 title: "THE CHECK ENGINE LIGHT.",
                 description: "Every new car now comes with OBD-II - On Board Diagnostics 2. This is a fault-registering system connected to sensors all
                 over the car, engine, fuel and emissions system. When the check engine light comes on, it can mean many things.
@@ -146,7 +146,7 @@ checkengine = Maintenance.create!({
     })
 
 serviceengine = Maintenance.create!({
-                image: "http://www.carbibles.com/images/serviceenginelight.gif",
+                image: "serviceenginelight.gif",
                 title: "THE SERVICE ENGINE LIGHT / MAINT REQD LIGHT.",
                 description: "This might indicate 'Service', 'Service Engine' or 'Maint Reqd'.
                 It's an indicator that you're getting close to a scheduled maintenance interval.
@@ -160,7 +160,7 @@ serviceengine = Maintenance.create!({
     })
 
 batterywarning = Maintenance.create!({
-                image: "http://www.carbibles.com/images/batterywarning.gif",
+                image: "batterywarning.gif",
                 title: "THE ELECTRICAL FAULT LIGHT.",
                 description: "This warning light is different in every car but normally it looks like a picture of a battery, similar to the picture on the left here.
                 You'll see it come on and go off when you start your engine as part of the car's self-test, but if this light comes on and stays on,
@@ -175,7 +175,7 @@ batterywarning = Maintenance.create!({
     })
 
 brakewarning1 = Maintenance.create!({
-                image: "http://www.carbibles.com/images/brakewarning1.jpg",
+                image: "brakewarning1.jpg",
                 title: "BRAKE WARNING LIGHT 1",
                 description: "Most cars nowadays have a brake warning light on the dash.
                 Its purpose is to alert you that something is wrong in the braking system somewhere.
@@ -189,7 +189,7 @@ brakewarning1 = Maintenance.create!({
     })
 
 brakewarning2 = Maintenance.create!({
-                image: "http://www.carbibles.com/images/brakewarning2.jpg",
+                image: "brakewarning2.jpg",
                 title: "BRAKE WARNING LIGHT 2",
                 description: "If you've got an ABS-equipped car, you also have a second light - the ABS light.
                 If it comes on, get it seen to as soon as possible.
@@ -203,7 +203,7 @@ brakewarning2 = Maintenance.create!({
     })
 
 coolantwarning = Maintenance.create!({
-                image: "http://www.carbibles.com/images/coolantwarninglight.jpg",
+                image: "coolantwarninglight.jpg",
                 title: "COOLANT WARNING LIGHT",
                 description: "This is normally the coolant level warning light.
                 If this comes on it means that the level of coolant in your radiator is low and needs topping up.
@@ -217,7 +217,7 @@ coolantwarning = Maintenance.create!({
     })
 
 oilpressure = Maintenance.create!({
-                image: "http://www.carbibles.com/images/oilpressurelight.jpg",
+                image: "oilpressurelight.jpg",
                 title: "OIL WARNING LIGHT",
                 description: "Typically this light will come on if your oil pressure is too low.
                 Low oil pressure is serious and if you continue to drive with this light on,

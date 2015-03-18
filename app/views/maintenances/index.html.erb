@@ -1,16 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class='car-maintenance-title'>Car Maintenance Tips</h1>
-
-<div>
+  <div>
     <% @maintenances.each do |maintenance| %>
-        <h3><%= image_tag(maintenance.image, class: 'image-format') %>
-        <%= maintenance.title %></h3>
-        <p><%= maintenance.description %></p>
-    <% end %>
+      <h3><%= maintenance.title %></h3>
+        <% if maintenance.image.present? %>
+          <p class='image-format'><%= image_tag(maintenance.image)%></p>
+        <% end %>
+      <p><%= maintenance.description %></p>
+    <% end %><br><br><br>
+  </div>
 
     <br>
 
-<br>
+
 
 
