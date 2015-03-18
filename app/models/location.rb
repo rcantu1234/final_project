@@ -4,6 +4,8 @@ class Location < ActiveRecord::Base
   belongs_to :user
 
   validates :zip_code, :user_id, presence: true
+  validates_length_of :zip_code, minimum: 5, maximum: 5
+
   geocoded_by :zip_code
   after_validation :geocode, :if => :zip_code_changed?
 

@@ -1,12 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<% form_tag maintenances_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
-
 <h1 class='car-maintenance-title'>Car Maintenance Tips</h1>
   <div>
     <% @maintenances.each do |maintenance| %>

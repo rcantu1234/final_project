@@ -7,6 +7,10 @@ class MaintenancesController < ApplicationController
     @maintenances = Maintenance.all
   end
 
+  def search
+    @maintenances = Maintenance.search params[:search]
+  end
+
   # GET /maintenances/1
   # GET /maintenances/1.json
   def show
