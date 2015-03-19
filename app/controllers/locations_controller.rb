@@ -18,7 +18,7 @@ class LocationsController < ApplicationController
     geo_response = Geocoder.coordinates(params[:zip_code])
     loc_response = Location.get_gas_stations(@location.latitude, @location.longitude, @location.distance)
     address_response = Location.get_gas_stations_address(@location.latitude, @location.longitude)
-    @map_url  = "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers="
+    @map_url  = "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude}, #{@location.longitude}&zoom=12&size=700x500&sensor=true&zoom=16&markers="
 
     @map_url += loc_response.fetch("stations", []).map do |station|
       "#{station['lat']}%2C#{station['lng']}"

@@ -27,6 +27,9 @@ gem 'geocoder'
 gem 'sunspot_rails'
 gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 
+gem 'gmaps4rails'
+
+gem 'sprockets'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
