@@ -4,14 +4,6 @@ Rails.application.routes.draw do
 
   resources :blogs
 
-  get 'blogs/index'
-
-  get 'blogs/new'
-
-  get 'blogs/edit'
-
-  get 'blogs/show'
-
   devise_for :users
   resources :locations
 

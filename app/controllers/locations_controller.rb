@@ -4,16 +4,10 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    # if params[:search].present?
-    #   @locations = Location.near(params[:search], 50, :order => :distance)
-    # else
-    #   @locations = Location.all
-    # end
-
-    @locations = Location.all
-    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
-      marker.lat location.latitude
-      marker.lng location.longitude
+    if params[:search].present?
+      @locations = Location.near(params[:search], 50, :order => :distance)
+    else
+      @locations = Location.all
     end
   end
 
@@ -23,16 +17,16 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     geo_response = Geocoder.coordinates(params[:zip_code])
     loc_response = Location.get_gas_stations(@location.latitude, @location.longitude, @location.distance)
-    address_response = Location.get_gas_stations_address(@location.latitude, @location.longitude)
+    #address_response = Location.get_gas_stations_address(@location.latitude, @location.longitude)
     @map_url  = "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude}, #{@location.longitude}&zoom=12&size=700x500&sensor=true&zoom=16&markers="
 
     @map_url += loc_response.fetch("stations", []).map do |station|
       "#{station['lat']}%2C#{station['lng']}"
     end.join('%7c')
 
-    @addresses = address_response.fetch("stations", []).map do |station|
-      "#{station['address']}"
-    end.join('%7c')
+    # @addresses = address_response.fetch("stations", []).map do |station|
+    #   "#{station['address']}"
+    # end.join('%7c')
 
   end
 
@@ -54,7 +48,14 @@ class LocationsController < ApplicationController
     geo_response = ::Geocoder.coordinates(params[:zip_code])
 
     respond_to do |format|
+
       if @location.save
+        # UserMailer.new_meeting(@meeting).deliver
+            #CREATE TWILIO REMINDER
+       Location.send_reminder_text_message("Zip Code: #{@location.zip_code},
+                                       Latitude: #{@location.latitude},
+                                       Longitude: #{@location.longitude},
+                                       User: #{@location.user}")
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
         format.json { render :show, status: :created, location: @location }
       else
@@ -97,6 +98,6 @@ class LocationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
       params.require(:location).permit(:zip_code, :address,
-        :state, :city, :latitude, :longitude, :user_id, :distance, :fuel_type)
+        :state, :city, :latitude, :longitude, :user_id, :distance, :fuel_type, :gas_price)
     end
 end
