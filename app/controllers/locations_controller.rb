@@ -52,10 +52,10 @@ class LocationsController < ApplicationController
       if @location.save
         # UserMailer.new_meeting(@meeting).deliver
             #CREATE TWILIO REMINDER
-       Location.send_reminder_text_message("Zip Code: #{@location.zip_code},
-                                       Latitude: #{@location.latitude},
-                                       Longitude: #{@location.longitude},
-                                       User: #{@location.user}")
+       # Location.send_reminder_text_message("Zip Code: #{@location.zip_code},
+       #                                 Latitude: #{@location.latitude},
+       #                                 Longitude: #{@location.longitude},
+       #                                 User: #{@location.user}")
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
         format.json { render :show, status: :created, location: @location }
       else
