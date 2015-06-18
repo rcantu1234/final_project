@@ -9,8 +9,6 @@ class LocationsController < ApplicationController
     else
       @locations = Location.all
     end
-
-    @user = User.new
   end
 
   # GET /locations/1
@@ -35,7 +33,6 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
-    @user = User.new
   end
 
   # GET /locations/1/edit

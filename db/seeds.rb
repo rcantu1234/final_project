@@ -115,7 +115,7 @@ lights2 = Maintenance.create!({
 
 checkengine = Maintenance.create!({
                 image: "checkenginelight.gif",
-                title: "THE CHECK ENGINE LIGHT.",
+                title: "THE CHECK ENGINE LIGHT",
                 description: "Every new car now comes with OBD-II - On Board Diagnostics 2. This is a fault-registering system connected to sensors all
                 over the car, engine, fuel and emissions system. When the check engine light comes on, it can mean many things.
                 There are something like 4,000 unique OBD2 codes that can be stored.
@@ -147,7 +147,7 @@ checkengine = Maintenance.create!({
 
 serviceengine = Maintenance.create!({
                 image: "serviceenginelight.gif",
-                title: "THE SERVICE ENGINE LIGHT / MAINT REQD LIGHT.",
+                title: "THE SERVICE ENGINE LIGHT / MAINT REQD LIGHT",
                 description: "This might indicate 'Service', 'Service Engine' or 'Maint Reqd'.
                 It's an indicator that you're getting close to a scheduled maintenance interval.
                 On some cars it's as simple as counting miles before it comes on, whilst on others it maps engine
@@ -161,7 +161,7 @@ serviceengine = Maintenance.create!({
 
 batterywarning = Maintenance.create!({
                 image: "batterywarning.gif",
-                title: "THE ELECTRICAL FAULT LIGHT.",
+                title: "THE ELECTRICAL FAULT LIGHT",
                 description: "This warning light is different in every car but normally it looks like a picture of a battery, similar to the picture on the left here.
                 You'll see it come on and go off when you start your engine as part of the car's self-test, but if this light comes on and stays on,
                 it means the electrical charging system is no longer working properly.
