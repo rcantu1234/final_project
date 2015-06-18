@@ -9,6 +9,8 @@ class LocationsController < ApplicationController
     else
       @locations = Location.all
     end
+
+    @user = User.new
   end
 
   # GET /locations/1
@@ -33,7 +35,7 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
-    @user = current_user
+    @user = User.new
   end
 
   # GET /locations/1/edit
@@ -98,7 +100,7 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:zip_code, :address, :first_name,
-        :state, :city, :latitude, :longitude, :user_id, :distance, :fuel_type, :gas_price)
+      params.require(:location).permit(:zip_code, :address,
+                                       :state, :city, :latitude, :longitude, :user_id, :distance, :fuel_type, :gas_price)
     end
 end
