@@ -5,7 +5,7 @@
 
   <div class="form-inputs width-height">
     <%= f.input :zip_code, placeholder: "zip code" %>
-    <%= f.association :user %>
+    <%= f.association :user, :include_blank => false %>
     <%= f.label 'Radius' %>
     <%= f.select :distance, [[1], [5], [10]] %>
   </div>
